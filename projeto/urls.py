@@ -18,12 +18,15 @@ from django.urls import path
 from django.conf.urls import url
 from .views import home
 from clientes.views import clientes, cliente_detalhe, cliente_nome
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
+
     url(r'^$', home),
     url(r'^clientes$', clientes),
     url(r'^cliente/(?P<id>\d{1,3})$', cliente_detalhe),
     url(r'^cliente/(?P<nome>\w+)$', cliente_nome),
     url(r'^admin/', admin.site.urls),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
