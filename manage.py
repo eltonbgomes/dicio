@@ -3,13 +3,6 @@
 import os
 import sys
 
-class Departamento(models.Model):
-    nome = models.CharField(max_length=100, blank=True, null=True)
-
-    def __str__(self):
-        return(self.nome)
-
-
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projeto.settings')

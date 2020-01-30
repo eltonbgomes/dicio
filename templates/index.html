@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+{% block title %} Seja bem vindo - Página principal {% endblock %}
+
+{% block main %}
+
+    <h1 class='estilo_head'>ola mundo!!!!</h1>
+
+    <ul>
+        <li>ola mundo</li>
+        <li>ola mundodsadfas</li>
+        <li>ola mundofdfd</li>
+        <li>ola mundo345</li>
+        <li>ola mundo34</li>
+    </ul>
+
+    <p>Condicionais</p>
+
+    {% if pessoa.sexo == 'm' or pessoa.sexo == 'M'%}
+        <li>Ola senhor {{nome}}</li>
+    {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
+        <li>Ola senhora {{nome}}</li>
+    {% else %}
+        <li>Ola {{nome}}</li>
+    {% endif %}
+    <br>
+
+    <p>loops e condicionais</p>
+
+    <ul>
+        {% for pessoa in lista %}
+            <li>
+            {% if pessoa.sexo == 'm' or pessoa.sexo == 'M'%}
+                Ola senhor {{pessoa.nome}}
+            {% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
+                Ola senhora {{pessoa.nome}}
+            {% else %}
+                Ola {{pessoa.nome}}
+            {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <button class="btn btn-info" onclick="olaMundo()">Clique aqui</button>
+
+    {% include "footer.html" with pnome=nome %}
+
+{% endblock %}

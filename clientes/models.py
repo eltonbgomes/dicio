@@ -6,12 +6,6 @@ class Departamento(models.Model):
     def __str__(self):
         return(self.nome)
 
-class Casa(models.Model):
-    nome = models.CharField(max_length=100, blank=True, null=True)
-
-    def __str__(self):
-        return(self.nome)
-
 class CPF(models.Model):
     numero = models.CharField(max_length=11, blank=False, null=False)
     data_exp = models.DateTimeField(auto_now=False)
